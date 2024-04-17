@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Open+Sans&family=Roboto&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Fira Code;
+}
+
+.responsive-text {
+  font-size: clamp(2.5rem, 4vw, 140rem);
+}
