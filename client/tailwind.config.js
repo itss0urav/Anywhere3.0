@@ -1,15 +1,30 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-import colors from "tailwindcss/colors";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+const colors = require("tailwindcss/colors");
+const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette");
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{ts,tsx}"],
-  // darkMode: "class",
+  // darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         spotlight: {
@@ -21,20 +36,30 @@ module.exports = {
             opacity: 1,
             transform: "translate(-50%,-40%) scale(1)",
           },
+          "accordion-down": {
+            from: { height: "0" },
+            to: { height: "var(--radix-accordion-content-height)" },
+          },
+          "accordion-up": {
+            from: { height: "var(--radix-accordion-content-height)" },
+            to: { height: "0" },
+          },
         },
       },
-      colors: colors, // Add this line
+      colors: {
+        ...colors,
+      },
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
 };
 
 function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
