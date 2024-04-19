@@ -9,22 +9,16 @@ import { Link } from "react-router-dom";
 export function LoginForm() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
     username: "",
-    email: "",
-    dob: "",
     password: "",
-    confirmPassword: "",
-    terms: false,
   });
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      console.log("Form submitted", formData);
+      console.log("Login Successful", formData);
       toast({
-        description: "Form submitted",
+        description: "Login Successful",
       });
     } catch (error) {
       toast({

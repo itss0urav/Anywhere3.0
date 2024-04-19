@@ -5,9 +5,9 @@ export function IntroductionPage() {
   return (
     <>
       <div className="flex justify-end bg-black gap-10 p-4">
-        <Links to="SignUp">SignUp</Links>
-        <Links to="LogIn">LogIn</Links>
-        <Links to="Help">Help</Links>
+        <Links to="/SignUp">SignUp</Links>
+        <Links to="/LogIn">LogIn</Links>
+        <Links to="/Help">Help</Links>
       </div>
       <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
         <h1 className="responsive-text font-bold text-center text-white relative z-20">

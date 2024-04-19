@@ -22,9 +22,9 @@ export function SignupForm() {
     e.preventDefault();
     if (formData.terms !== false) {
       try {
-        console.log("Form submitted", formData);
+        console.log("Signup Successful", formData);
         toast({
-          description: "Form submitted",
+          description: "Signup Successful",
         });
       } catch (error) {
         toast({
