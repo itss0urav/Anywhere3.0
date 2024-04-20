@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function CreatePostFormPage() {
+export function CreatCommunityFormPage() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     title: "",
@@ -25,9 +25,9 @@ export function CreatePostFormPage() {
     e.preventDefault();
 
     try {
-      console.log("Post created successfully", formData);
+      console.log("Community created successfully", formData);
       toast({
-        description: "Post created successfully",
+        description: "Community created successfully",
       });
     } catch (error) {
       toast({
@@ -62,7 +62,7 @@ export function CreatePostFormPage() {
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
         <form className="my-8" onSubmit={handleSubmit}>
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="username">Post Title</Label>
+            <Label htmlFor="username">Community name</Label>
             <Input
               id="title"
               placeholder="Best Community"
@@ -71,7 +71,7 @@ export function CreatePostFormPage() {
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="description">description</Label>
+            <Label htmlFor="description">Community description</Label>
             <Input
               id="description"
               placeholder="Anywhere is amazing !"
@@ -80,7 +80,7 @@ export function CreatePostFormPage() {
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
-            <Label htmlFor="image">Image</Label>
+            <Label htmlFor="image">Community logo</Label>
             <Input
               id="image"
               type="file"

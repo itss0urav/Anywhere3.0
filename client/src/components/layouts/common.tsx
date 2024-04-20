@@ -1,10 +1,19 @@
 import { Navbar } from "@/components/navbar";
-export default function Common() {
+import Footer from "../ui/footer";
+import { cn } from "@/utils/cn";
+
+export function CommonLayout({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="bg-black h-screen">
-      <header className="flex justify-center">
-        <Navbar />
-      </header>
+    <div className={cn(className, "max-w-screen ")}>
+      <Navbar />
+      <div>{children}</div>
+      <Footer />
     </div>
   );
 }

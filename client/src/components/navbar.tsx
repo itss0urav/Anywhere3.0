@@ -31,9 +31,9 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function Navbar() {
+export function Navbar({ className }: { className?: string }) {
   return (
-    <NavigationMenu>
+    <NavigationMenu className={cn(className, "max-w-screen")}>
       <NavigationMenuList className="text-white">
         <NavigationMenuItem>
           <NavigationMenuTrigger>
