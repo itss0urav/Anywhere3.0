@@ -4,6 +4,7 @@ import { SignupForm } from "./pages/signup";
 import { Toaster } from "@/components/ui/toaster";
 import { LoginForm } from "./pages/login";
 import Common from "./components/layouts/common";
+import { CreatePostFormPage } from "./pages/create-post";
 export default function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/home" element={<Common />} />
+          <Route path="/post/create" element={<CreatePostFormPage />} />
         </Routes>
       </BrowserRouter>
       <Toaster />
