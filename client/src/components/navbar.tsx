@@ -33,7 +33,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar({ className }: { className?: string }) {
   return (
-    <NavigationMenu className={cn(className, "max-w-screen")}>
+    <NavigationMenu className={cn(className, " max-w-screen z-[11]")}>
       <NavigationMenuList className="text-white">
         <NavigationMenuItem>
           <NavigationMenuTrigger>
@@ -66,7 +66,7 @@ export function Navbar({ className }: { className?: string }) {
               </ListItem>
               <ListItem
                 className="hover:bg-slate-800"
-                href="/docs"
+                href="/communities"
                 title="Browse Communities"
               >
                 See what others have shared...{" "}

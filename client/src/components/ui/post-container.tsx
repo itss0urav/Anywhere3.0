@@ -3,21 +3,7 @@
 import { cn } from "@/utils/cn";
 import { BackgroundGradient } from "../ui/background-gradient";
 import { Logo } from "./logo";
-interface Post {
-  _id: { $oid: string };
-  name: string;
-  category: string;
-  description: string;
-  imageUrl?: string;
-  nsfw: boolean;
-  author: string;
-  community?: string;
-  votes: { user: string; voteStatus: number; _id: { $oid: string } }[];
-  comments?: any[]; // You might want to create a type for comments as well
-  createdAt: { $date: { $numberLong: string } };
-  updatedAt: { $date: { $numberLong: string } };
-  __v: { $numberInt: string };
-}
+import { Post } from "@/shared/types/post";
 
 export default function PostContainer({
   className,
@@ -32,7 +18,7 @@ export default function PostContainer({
       <BackgroundGradient
         className={cn(
           className,
-          "max-w-screen w-[30rem] rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-zinc-900"
+          "max-w-screen w-[20rem] lg:w-[30rem]  rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-zinc-900"
         )}
       >
         <img

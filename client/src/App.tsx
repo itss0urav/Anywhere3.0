@@ -6,6 +6,7 @@ import { LoginForm } from "./pages/login";
 import { CreatePostFormPage } from "./pages/create-post";
 import { CreatCommunityFormPage } from "./pages/create-community";
 import HomePage from "./pages/home";
+import { CommunitiesPage } from "./pages/communities";
 export default function App() {
   return (
     <div>
@@ -15,8 +16,12 @@ export default function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/communities" element={<CommunitiesPage />} />
           <Route path="/post/create" element={<CreatePostFormPage />} />
-          <Route path="/community/create" element={<CreatCommunityFormPage />} />
+          <Route
+            path="/community/create"
+            element={<CreatCommunityFormPage />}
+          />
         </Routes>
       </BrowserRouter>
       <Toaster />
