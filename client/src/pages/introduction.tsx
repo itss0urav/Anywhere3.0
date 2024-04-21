@@ -10,7 +10,7 @@ export function IntroductionPage() {
         <Links to="/Help">Help</Links>
       </div>
       <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-        <h1 className="responsive-text font-bold text-center text-white relative z-20">
+        <h1 className="responsive-text text-center text-white relative z-20">
           Anywhere
         </h1>
         <div className="w-[40rem] h-40 relative">
